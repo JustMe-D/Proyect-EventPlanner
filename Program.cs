@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using Proyect_EventPlanner.Data;
+
 namespace Proyect_EventPlanner
 {
     public class Program
@@ -8,6 +11,10 @@ namespace Proyect_EventPlanner
 
             // Add services to the container.
             builder.Services.AddRazorPages();
+
+            builder.Services.AddDbContext<EventContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("EventDB"))
+                );
 
             var app = builder.Build();
 
