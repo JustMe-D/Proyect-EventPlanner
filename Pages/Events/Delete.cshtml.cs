@@ -19,11 +19,13 @@ namespace Proyect_EventPlanner.Pages.Events
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
+            Console.WriteLine($"Editing event with ID: {id}");
+
             if (id == null || _context.Events == null)
             {
                 return NotFound();
             }
-            var even= await _context.Events.FirstOrDefaultAsync(m => m.IdLocation == id);
+            var even= await _context.Events.FirstOrDefaultAsync(m => m.IdEvent == id);
             if (even == null)
             {
                 return NotFound();
