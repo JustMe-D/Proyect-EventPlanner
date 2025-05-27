@@ -14,7 +14,6 @@
     <Folder Include="Pages\Resources\" />
     <Folder Include="Pages\Participants\" />
     <Folder Include="Pages\Registers\" />
-    <Folder Include="Pages\Users\" />
   </ItemGroup>
 
   <ItemGroup>
