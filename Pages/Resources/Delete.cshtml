@@ -1,0 +1,33 @@
+﻿@page
+@model Proyect_EventPlanner.Pages.Resources.DeleteModel
+@{
+	ViewData["Title"] = "Eliminar Recurso";
+}
+
+<h1>Eliminar Recurso</h1>
+
+<h3>¿Está seguro de que desea eliminar este recurso?</h3>
+
+<div>
+	<h4>Recurso</h4>
+	<hr />
+	<dl class="row">
+		<dt class="col-sm-2">Nombre</dt>
+		<dd class="col-sm-10">@Model.Resource.ResourceName</dd>
+
+		<dt class="col-sm-2">Cantidad</dt>
+		<dd class="col-sm-10">@Model.Resource.Quantity</dd>
+
+		<dt class="col-sm-2">Descripción</dt>
+		<dd class="col-sm-10">@Model.Resource.Description</dd>
+
+		<dt class="col-sm-2">Evento</dt>
+		<dd class="col-sm-10">@Model.Resource.Event?.EventName</dd>
+	</dl>
+
+	<form method="post">
+		<input type="hidden" asp-for="Resource.IdResource" />
+			<button type="submit" class="btn btn-danger">Eliminar</button>
+			<a asp-page="Index" class="btn btn-secondary">Cancelar</a>
+	</form>
+</div>
