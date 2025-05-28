@@ -1,0 +1,52 @@
+﻿@page
+@model Proyect_EventPlanner.Pages.Participants.CreateModel
+@{
+	ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Participant</h4>
+<hr />
+<div class="row">
+	<div class="col-md-4">
+		<form method="post">
+			<div asp-asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+			<div class="form-group">
+				<label asp-for="Participant.Name" class="contol-label"></label>
+				<input asp-for ="Participant.Name" class="form-control"></input>
+				<span asp-validation-for="Participant.Name" class="text-danger"></span>
+			</div>
+
+			<div class="form-group">
+				<label asp-for="Participant.LastName" class="contol-label"></label>
+				<input asp-for="Participant.LastName" class="form-control"></input>
+				<span asp-validation-for="Participant.LastName" class="text-danger"></span>
+			</div>
+
+			<div class="form-group">
+				<label asp-for="Participant.Email" class="contol-label"></label>
+				<input asp-for="Participant.Email" class="form-control"></input>
+				<span asp-validation-for="Participant.Email" class="text-danger"></span>
+			</div>
+
+			<div class="form-group">
+				<label asp-for="Participant.Phone" class="contol-label"></label>
+				<input asp-for="Participant.Phone" class="form-control"></input>
+				<span asp-validation-for="Participant.Phone" class="text-danger"></span>
+			</div>
+
+			<div class="form-group mt-3">
+				<input type="submit" value="Create" class="btn btn-success"></input>
+				<a asp-page="Index" class="btn btn-primary">Back To List></a>
+			</div>
+		</form>
+	</div>
+</div>
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}
