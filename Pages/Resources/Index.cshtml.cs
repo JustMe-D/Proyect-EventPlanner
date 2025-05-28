@@ -19,6 +19,9 @@ namespace Proyect_EventPlanner.Pages.Resources
         public async Task OnGetAsync()
         {
             ResourceList = await _context.Resources.ToListAsync();
+            ResourceList = await _context.Resources
+                .Include(r => r.Event)
+                .ToListAsync();
         }
     }
 }
