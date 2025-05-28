@@ -1,0 +1,49 @@
+﻿@page
+@model Proyect_EventPlanner.Pages.Registers.IndexModel
+@{
+ ViewData["Title"] = "index Registers";
+}
+<h1>index Registers</h1>
+<p>
+    <a asp-page="Create" class="btn btn-success">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Registers[0].IdEvent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Registers[0].IdParticipant)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Registers[0].RegisterDate)
+            </th>
+         
+
+
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Registers)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdEvent)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdParticipant)
+                </td>
+                <td>
+                    @item.RegisterDate.ToString("MM/dd/yyyy")
+                </td>
+               
+                <td>
+                    <a asp-page="./Delete" asp-route-id="@item.IdEvent" class="btn btn-danger">Delete</a>
+                    <a asp-page="./Edit" asp-route-id="@item.IdEvent" class="btn btn-warning">Edit</a>
+
+                </td>
+            </tr>
+        }
+</table>
