@@ -10,7 +10,6 @@
   <ItemGroup>
     <Folder Include="Pages\Auth\" />
     <Folder Include="Pages\Events\" />
-    <Folder Include="Pages\Locations\" />
     <Folder Include="Pages\Resources\" />
     <Folder Include="Pages\Participants\" />
     <Folder Include="Pages\Registers\" />

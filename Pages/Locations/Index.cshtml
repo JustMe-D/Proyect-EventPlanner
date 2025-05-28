@@ -1,0 +1,36 @@
+﻿@page
+@model Proyect_EventPlanner.Pages.Locations.IndexModel
+@{
+    ViewData["Title"] = "Locations";
+}
+
+<h1>Locations</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-success">Create New Location</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Locations[0].LocationName)</th>
+            <th>@Html.DisplayNameFor(model => model.Locations[0].Capacity)</th>
+            <th>@Html.DisplayNameFor(model => model.Locations[0].Address)</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Locations)
+        {
+            <tr>
+                <td>@item.LocationName</td>
+                <td>@item.Capacity</td>
+                <td>@item.Address</td>
+                <td>
+                    <a asp-page="Edit" asp-route-id="@item.IdLocation" class="btn btn-warning">Edit</a>
+                    <a asp-page="Delete" asp-route-id="@item.IdLocation" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
