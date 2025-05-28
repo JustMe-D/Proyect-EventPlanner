@@ -13,6 +13,7 @@
 <table class="table">
     <thead>
         <tr>
+            <th>@Html.DisplayNameFor(model => model.Locations[0].IdLocation)</th>
             <th>@Html.DisplayNameFor(model => model.Locations[0].LocationName)</th>
             <th>@Html.DisplayNameFor(model => model.Locations[0].Capacity)</th>
             <th>@Html.DisplayNameFor(model => model.Locations[0].Address)</th>
@@ -23,6 +24,7 @@
         @foreach (var item in Model.Locations)
         {
             <tr>
+                <td>@Html.DisplayFor(modelItem => item.IdLocation)</td>
                 <td>@item.LocationName</td>
                 <td>@item.Capacity</td>
                 <td>@item.Address</td>
