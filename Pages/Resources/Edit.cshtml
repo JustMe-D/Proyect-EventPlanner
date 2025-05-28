@@ -1,16 +1,18 @@
-﻿@page
-@model Proyect_EventPlanner.Pages.Resources.CreateModel
+﻿@page "{id:int}"
+@model Proyect_EventPlanner.Pages.Resources.EditModel
 @{
-    ViewData["Title"] = "Crear Recurso";
+    ViewData["Title"] = "Editar Recurso";
 }
 
-<h1>Crear Recurso</h1>
+<h1>Editar Recurso</h1>
 
 <h4>Resource</h4>
 <hr />
 <div class="row">
     <div class="col-md-6">
         <form method="post">
+            <input type="hidden" asp-for="Resource.IdResource" />
+
             <div class="form-group">
                 <label asp-for="Resource.ResourceName" class="control-label"></label>
                 <input asp-for="Resource.ResourceName" class="form-control" />
@@ -37,7 +39,7 @@
                 <span asp-validation-for="Resource.IdEvent" class="text-danger"></span>
             </div>
 
-            <button type="submit" class="btn btn-primary mt-3">Guardar</button>
+            <button type="submit" class="btn btn-primary mt-3">Guardar cambios</button>
             <a asp-page="Index" class="btn btn-secondary mt-3">Cancelar</a>
         </form>
     </div>
