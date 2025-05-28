@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -6,8 +7,8 @@ using Proyect_EventPlanner.Models;
 
 namespace Proyect_EventPlanner.Pages.Users
 {
-
-        public class DeleteModel : PageModel
+    [Authorize]
+    public class DeleteModel : PageModel
         {
             private readonly EventContext _context;
 

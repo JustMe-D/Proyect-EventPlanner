@@ -7,6 +7,7 @@ using Proyect_EventPlanner.Models;
 
 namespace Proyect_EventPlanner.Pages.Users
 {
+    [Authorize]
         public class CreateModel : PageModel
         {
             private readonly EventContext _context;
