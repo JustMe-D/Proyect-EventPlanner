@@ -13,6 +13,11 @@
     <Folder Include="Pages\Resources\" />
     <Folder Include="Pages\Participants\" />
     <Folder Include="Pages\Registers\" />
+    <Folder Include="Pages\Auth\" />
+    <Folder Include="Pages\Locations\" />
+    <Folder Include="Pages\Resources\" />
+    <Folder Include="Pages\Participants\" />
+    <Folder Include="Pages\Users\" />
   </ItemGroup>
 
   <ItemGroup>

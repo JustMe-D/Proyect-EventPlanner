@@ -1,0 +1,59 @@
+﻿@page
+@model Proyect_EventPlanner.Pages.Events.IndexModel
+@{
+  ViewData["Title"] = "index Events";
+}
+<h1>index Events</h1>
+<p>
+    <a asp-page="Create" class="btn btn-success">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Events[0].EventName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Events[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Events[0].StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Events[0].FinishDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Events[0].IdLocation)
+            </th>
+            
+
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Events)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @item.StartDate.ToString("MM/dd/yyyy")
+                </td>
+                <td>
+                    @item.FinishDate.ToString("MM/dd/yyyy")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdLocation)
+                </td>
+                <td>
+                    <a asp-page="./Delete" asp-route-id="@item.IdEvent" class="btn btn-danger">Delete</a>
+                    <a asp-page="./Edit" asp-route-id="@item.IdEvent" class="btn btn-warning">Edit</a>
+
+                </td>
+            </tr>
+        }
+</table>

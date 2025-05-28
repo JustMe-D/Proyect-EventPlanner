@@ -1,0 +1,47 @@
+﻿@page "{id:int?}"
+@model Proyect_EventPlanner.Pages.Events.DeleteModel
+@{
+}
+<h1>Delete</h1>
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Event</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Event.EventName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Event.EventName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Event.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Event.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Event.StartDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Event.StartDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Event.FinishDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Event.FinishDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Event.IdLocation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Event.IdLocation)
+        </dd>
+    </dl>
+    <form method="post">
+        <input type="hidden" asp-for="Event.IdEvent" />
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a asp-page="./Index" class="btn btn-primary">Back To List</a>
+    </form>
+</div>
