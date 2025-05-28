@@ -1,0 +1,41 @@
+﻿@page
+@model Proyect_EventPlanner.Pages.Resources.IndexModel
+@{
+    ViewData["Title"] = "Lista de Recursos";
+}
+
+<h1>Lista de Recursos</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-success">Crear nuevo recurso</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>IdResource</th>
+            <th>EventName</th>
+            <th>ResourceName</th>
+            <th>Quantity</th>
+            <th>Description</th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ResourceList)
+{
+        <tr>
+            <td>@item.IdResource</td>
+            <td>@item.IdEvent</td>
+            <td>@item.ResourceName</td>
+            <td>@item.Quantity</td>
+            <td>@item.Description</td>
+            <td>
+                <a asp-page="Edit" asp-route-id="@item.IdResource" class="btn btn-sm btn-warning">Editar</a> |
+                <a asp-page="Delete" asp-route-id="@item.IdResource" class="btn btn-sm btn-danger">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
