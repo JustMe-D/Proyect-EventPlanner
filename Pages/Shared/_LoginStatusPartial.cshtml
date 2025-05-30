@@ -2,6 +2,7 @@
 {
     <form method="post" asp-page="/Auth/Logout" class="d-flex flex-column align-items-center" style="width: 100px;">
         <button type="submit" style="background:none; border:none; padding:0; display:flex; flex-direction:column; align-items:center;">
+            <img src="~/assets/logout.png" alt="Logout" style="height: 36px; margin-bottom: 5px;" />
             <span style="font-weight: bold; color: #000;">Logout</span>
         </button>
     </form>
@@ -10,10 +11,13 @@
 else
 {
     <div class="d-flex">
-        <a class="d-flex flex-column align-items-center me-3" asp-page="/Auth/Login" style="width: 100px;">
+        <a class="d-flex flex-column align-items-center" asp-page="/Auth/Login" style="width: 100px;margin-right: 8px">
+            <img src="~/assets/LogIn.png" alt="Login" style="height: 36px; margin-bottom: 5px;" />
             <span style="font-weight: bold; color: #000;">LogIn</span>
         </a>
+        <a></a>
         <a class="d-flex flex-column align-items-center" asp-page="/Auth/SignIn" style="width: 100px;">
+            <img src="~/assets/SignIn.png" alt="Login" style="height: 36px; margin-bottom: 5px;" />
             <span style="font-weight: bold; color: #000;">SignIn</span>
         </a>
     </div>
