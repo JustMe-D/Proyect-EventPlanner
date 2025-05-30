@@ -8,45 +8,102 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Proyect_EventPlanner.styles.css" asp-append-version="true" />
 </head>
+@{
+        var isAdmin = User.IsInRole("Admin");
+}
+@{
+        var isuser = User.IsInRole("User");
+}
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index"><img class="img-fluid" asp-append-version="true" width="50px" height="50px" src="~/Assets/eventplanner.png" alt="Casita" /></a>
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" asp-area="" asp-page="/Index" style="font-size: 1.8rem; font-weight: bold;margin-right: 50px; margin-left: 20px">
+                    <img src="~/assets/EventPlanner.png" alt="Supermarket Icon" style="height: 50px; margin-right: 10px;" />
+					Event Planner
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                </button>    
+                <div class="container">
+                    <ul class="navbar-nav mx-auto">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index"><img class="img-fluid" asp-append-version="true" width="50px" height="50px" src="~/assets/home.png" alt="Casita" /></a>
+                            @if (isAdmin || isuser)
+                            {
+                                <a class="nav-link text-dark nav-link-lg" asp-area="" asp-page="/Index">
+                                    <img src="~/assets/Home.png" alt="Home Icon" style="height: 30px; vertical-align: middle; margin-right: 5px;" />
+                                    Home
+                                </a>
+                            }
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy"><img class="img-fluid" asp-append-version="true" width="50px" height="50px" src="~/Assets/privacity.png" alt="Casita" /></a>
+                            @if (isAdmin || isuser)
+                            {
+                                <a class="nav-link text-dark nav-link-lg" asp-area="" asp-page="/Events/Index">
+                                    <img src="~/assets/Event.png" alt="Events Icon" style="height: 30px; vertical-align: middle; margin-right: 5px;" />
+                                    Events
+                                </a>
+                            }
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Events/Index"><img class="img-fluid" asp-append-version="true" width="50px" height="50px" src="~/Assets/event.png" alt="Casita" /></a>
+                            @if (isAdmin || isuser)
+                            {
+                                <a class="nav-link text-dark nav-link-lg" asp-area="" asp-page="/Locations/Index">
+                                    <img src="~/assets/Locations.png" alt="Locations Icon" style="height: 30px; vertical-align: middle; margin-right: 5px;" />
+                                    Locations
+                                </a>
+                            }
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Registers/Index"><img class="img-fluid" asp-append-version="true" width="50px" height="50px" src="~/Assets/register.png" alt="Casita" /></a>
+                            @if (isAdmin)
+                            {
+                                <a class="nav-link text-dark nav-link-lg" asp-area="" asp-page="/Participants/Index">
+                                    <img src="~/assets/Participants.png" alt="Participants Icon" style="height: 30px; vertical-align: middle; margin-right: 5px;" />
+                                    Participants
+                                </a>
+                            }
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Locations/Index"><img class="img-fluid" asp-append-version="true" width="50px" height="50px" src="~/Assets/location.png" alt="Casita" /></a>
+                            @if (isAdmin)
+                            {
+                                <a class="nav-link text-dark nav-link-lg" asp-area="" asp-page="/Registers/Index">
+                                    <img src="~/assets/Registers.png" alt="Registers Icon" style="height: 30px; vertical-align: middle; margin-right: 5px;" />
+                                    Registers
+                                </a>
+                            }
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Participants/Index"><img class="img-fluid" asp-append-version="true" width="50px" height="50px" src="~/Assets/participants.png" alt="Casita" /></a>
+                            @if (isAdmin || isuser)
+                            {
+                                <a class="nav-link text-dark nav-link-lg" asp-area="" asp-page="/Resources/Index">
+                                    <img src="~/assets/Resources.png" alt="Resources Icon" style="height: 30px; vertical-align: middle; margin-right: 5px;" />
+                                    Resources
+                                </a>
+                            }
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Resources/Index"><img class="img-fluid" asp-append-version="true" width="50px" height="50px" src="~/Assets/resources.png" alt="Casita" /></a>
+                            @if (isAdmin || isuser)
+                            {
+                                <a class="nav-link text-dark nav-link-lg" asp-area="" asp-page="/Users/Index">
+                                    <img src="~/assets/Users.png" alt="Users Icon" style="height: 30px; vertical-align: middle; margin-right: 5px;" />
+                                    Users
+                                </a>
+                            }
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Users/Index"><img class="img-fluid" asp-append-version="true" width="50px" height="50px" src="~/Assets/user.png" alt="Casita" /></a>
+                            @if (isAdmin || isuser)
+                            {
+                                <a class="nav-link text-dark nav-link-lg" asp-area="" asp-page="/Privacy">
+                                    <img src="~/assets/Privacity.png" alt="Users Icon" style="height: 30px; vertical-align: middle; margin-right: 5px;" />
+                                    Privacity
+                                </a>
+                            }
                         </li>
 
                     </ul>
-                </div>  
                 </div>
+                
                 <div class="mr-2">
                     <partial name="_LoginStatusPartial" />
                 </div>

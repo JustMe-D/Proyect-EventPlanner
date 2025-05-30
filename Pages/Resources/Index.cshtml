@@ -4,12 +4,17 @@
     ViewData["Title"] = "Lista de Recursos";
 }
 
+@{
+    var isAdmin = User.IsInRole("Admin");
+}
+
 <h1>Lista de Recursos</h1>
-
-<p>
-    <a asp-page="Create" class="btn btn-success">Crear nuevo recurso</a>
-</p>
-
+@if (isAdmin)
+{
+    <p>
+        <a asp-page="Create" class="btn btn-success">Crear nuevo recurso</a>
+    </p>
+}
 <table class="table">
     <thead>
         <tr>
@@ -19,7 +24,7 @@
             <th>Quantity</th>
             <th>Description</th>
             
-            <th></th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -32,8 +37,11 @@
             <td>@item.Quantity</td>
             <td>@item.Description</td>
             <td>
-                <a asp-page="Edit" asp-route-id="@item.IdResource" class="btn btn-sm btn-warning">Editar</a> |
+    @if (isAdmin)
+    {
+                <a asp-page="Edit" asp-route-id="@item.IdResource" class="btn btn-sm btn-warning">Editar</a> 
                 <a asp-page="Delete" asp-route-id="@item.IdResource" class="btn btn-sm btn-danger">Eliminar</a>
+    }
             </td>
         </tr>
 }

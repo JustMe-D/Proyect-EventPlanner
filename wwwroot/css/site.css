@@ -20,3 +20,16 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.nav-link-lg {
+    font-size: 1.1rem; /* Ajusta este valor según lo que desees, pero menor a 1.8rem */
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-right: 20px;
+}
